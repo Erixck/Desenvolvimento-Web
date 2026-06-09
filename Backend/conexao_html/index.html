@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Guerra dos Quadrados - Trabalho Canvas DS</title>
+</head>
+<body style="text-align: center; font-family: Arial, sans-serif; background-color: #f0f0f0;">
+
+    <h1>Guerra dos Quadrados</h1>
+    
+    <div id="menu">
+        <p>Escolha o modo de jogo:</p>
+        <button onclick="iniciarJogo(1)">1 Jogador (vs CPU)</button>
+        <button onclick="iniciarJogo(2)">2 Jogadores</button>
+    </div>
+
+    <div id="areaJogo" style="display: none;">
+        <h2 id="placar">Jogador Azul: 0 | Jogador Vermelho: 0</h2>
+        <canvas id="meuCanvas" width="800" height="400" style="border: 3px solid black; background-color: #87CEEB;"></canvas>
+        <p><strong>Controles:</strong></p>
+        <p>Azul: W, A, D (Pula, Esquerda, Direita) | Vermelho: Setas do Teclado</p>
+        <p><em>Objetivo: Pule em cima do outro jogador para marcar ponto!</em></p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
