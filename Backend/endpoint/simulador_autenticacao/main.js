@@ -15,6 +15,12 @@ const servidor = http.createServer((req, res) => {
     }
     else {
         res.writeHead(404, {'Content-Type': 'text/plain; charset=utf-8'});
-        res.end('pagina encontrada');
+        res.end('pagina nao encontrada');
     }
+});
+
+const porta = 3000;
+
+servidor.listen(porta, () => {
+    console.log(`Servidor rodando em http://localhost:${porta}`);
 });

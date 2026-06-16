@@ -14,10 +14,8 @@ const servidor = http.createServer((req, res) => {
     }
 
     else if (req.url === '/redirecionar') {
-        res.writeHead(301, {
-            'Location': '/sucesso'
-        });
-        res.end();
+        res.writeHead(301, {'Content-Type': 'text/plain'});
+        res.end('Codigo 301');
     }
 
     else if (req.url === '/erro-cliente') {
@@ -31,19 +29,21 @@ const servidor = http.createServer((req, res) => {
     }
 
     else {
-    fs.readFile('404.html', (erro, dados) => {
+        fs.readFile('index.html', (erro, dados) => {
+            if (erro) {
+                res.writeHead(500, {'Content-Type': 'text/plain'});
+                res.end('Erro ao carregar a pagina');
+                return;
+            }
 
-        if (erro) {
-            res.writeHead(500, {'Content-Type': 'text/plain'});
-            res.end('Erro ao carregar a pagina 404');
-            return;
-        }
+            res.writeHead(404, {'Content-Type': 'text/html'});
+            res.end(dados);
+        });
+    }
+}); 
 
-        res.writeHead(404, {'Content-Type': 'text/html'});
-        res.end(dados);
-    });
-}
+const porta = 3000;
 
-servidor.listen(3000, () => {
-    console.log('Servidor rodando em http://localhost:3000');
-})});
+servidor.listen(porta, () => {
+    console.log(`Servidor rodando em http://localhost:${porta}`);
+});
