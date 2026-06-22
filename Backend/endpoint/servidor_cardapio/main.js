@@ -1,5 +1,4 @@
 const http = require('http');
-const fs = require('fs');
 
 const servidor = http.createServer((req, res) => {
     if (req.url === '/seg'){

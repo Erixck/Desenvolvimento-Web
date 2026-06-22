@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Over</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: black;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        color: red;
+        font-size: 5rem;
+        animation: piscar 0.8s infinite;
+        text-shadow: 0 0 20px red;
+    }
+
+    @keyframes piscar {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.3;
+        }
+    }
+
+    .caveira {
+        position: absolute;
+        font-size: 2rem;
+        color: white;
+        animation: cair 4s linear infinite;
+    }
+
+    @keyframes cair {
+        from {
+            transform: translateY(-100vh);
+        }
+        to {
+            transform: translateY(100vh);
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>☠ GAME OVER ☠</h1>
+
+<script>
+for(let i = 0; i < 40; i++) {
+    const caveira = document.createElement("div");
+    caveira.classList.add("caveira");
+    caveira.innerHTML = "☠";
+
+    caveira.style.left = Math.random() * 100 + "vw";
+    caveira.style.animationDuration =
+        (Math.random() * 3 + 2) + "s";
+
+    document.body.appendChild(caveira);
+}
+</script>
+
+</body>
+</html>

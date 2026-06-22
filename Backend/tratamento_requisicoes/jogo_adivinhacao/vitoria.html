@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vitória!</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #00c853, #64dd17);
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+    }
+
+    h1 {
+        color: white;
+        font-size: 5rem;
+        animation: crescer 1s infinite alternate;
+        text-shadow: 0 0 20px gold;
+    }
+
+    @keyframes crescer {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.2);
+        }
+    }
+
+    .confete {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        animation: cair 3s linear infinite;
+    }
+
+    @keyframes cair {
+        from {
+            transform: translateY(-100vh) rotate(0deg);
+        }
+        to {
+            transform: translateY(100vh) rotate(720deg);
+        }
+    }
+</style>
+</head>
+<body>
+
+<h1>🏆 VOCÊ VENCEU! 🏆</h1>
+
+<script>
+for(let i = 0; i < 100; i++) {
+    const confete = document.createElement("div");
+    confete.classList.add("confete");
+
+    confete.style.left = Math.random() * 100 + "vw";
+    confete.style.backgroundColor =
+        `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+    confete.style.animationDuration =
+        (Math.random() * 2 + 2) + "s";
+
+    document.body.appendChild(confete);
+}
+</script>
+
+</body>
+</html>
