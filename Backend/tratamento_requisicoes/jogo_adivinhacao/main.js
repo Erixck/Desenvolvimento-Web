@@ -14,12 +14,14 @@ const server = http.createServer((req, res) => {
         });
     }
     else if (endpoint === '/numero') {
-        const numero = parseInt(urlParams.searchParams.get('numero'));
-        verificarNumero(numero, numeroAleatorio);
+        let numero = parseInt(urlParams.searchParams.get('numero'));
+        console.log(numero);
+        console.log(numeroAleatorio);
+        verificarNumero(numero, numeroAleatorio, res);
     }
 });
 
-function verificarNumero(numero, numeroAleatorio) {
+function verificarNumero(numero, numeroAleatorio, res) {
     if (numero > numeroAleatorio) {
         tentativas++;
 
@@ -57,6 +59,7 @@ function verificarNumero(numero, numeroAleatorio) {
         });
     }
 }
+
 server.listen(3000, () => {
     console.log('Servidor rodando em http://localhost:3000');
 });

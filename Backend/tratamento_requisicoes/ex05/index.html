@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Envie um valor</h1>
+    <input type="number" id="numero" placeholder="Digite um numero">
+    <button onclick="enviarNumero()">Enviar</button>
+
+    <script>
+        function enviarNumero(){
+        const numero = document.getElementById('numero').value;
+
+        if (numero === ''){
+        alert('Por favor, insira um número.');
+        return;
+        }
+
+        window.location.href = `/guess?numero=${numero}`;
+        }
+    </script>
+</body>
+</html>
