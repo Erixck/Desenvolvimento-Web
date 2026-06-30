@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .container {
+            background-color: rgba(255,255,255,0.1);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            width: 500px;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: #ffffff;
+            color: #2a5298;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #dfe9f3;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bem-vindo!</h1>
+
+        <p>Login realizado com sucesso.</p>
+        <p>Você acessou a área protegida do sistema.</p>
+
+        <a href="#" class="btn">Explorar</a>
+
+        <footer>
+            Desenvolvimento de Software - Exercício de Node.js
+        </footer>
+    </div>
+</body>
+</html>
